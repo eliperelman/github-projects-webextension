@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "GitHub Projects",
+  "version": "1.0",
+  "description": "Makes GitHub Projects more useful for project management",
+  "icons": {
+    "48": "icons/github.svg",
+    "96": "icons/github.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.github.com/*/*/projects/*"],
+      "js": ["projects.js"]
+    }
+  ],
+  "permissions": [
+    "https://api.github.com/*",
+    "webRequest"
+  ]
+}
