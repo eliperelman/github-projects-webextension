@@ -12,8 +12,7 @@ const template = (milestone) => `
 `;
 
 const request = (slug, type, id) => fetch(`https://api.github.com/repos/${slug}/${type}/${id}`)
-  .then(response => response.json())
-  .catch(err => console.error(err));
+  .then(response => response.json());
 
 [...document.querySelectorAll('.project-card')]
   .map(el => {
@@ -37,8 +36,6 @@ const request = (slug, type, id) => fetch(`https://api.github.com/repos/${slug}/
         if (!milestone) {
           return;
         }
-
-        console.log(milestone);
 
         const fragment = document
           .createRange()
